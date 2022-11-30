@@ -32,21 +32,22 @@ const getManifests = ({ manifests, id, label, key }) => {
 
     next?.id
       ? getManifests({ manifests: data, id: next?.id, label, key })
-      : combineCollection(manifests, id.split("?")[0], label, key);
+      : combineCollection(manifests, label, key);
   });
 };
 
-const combineCollection = (manifests, id, label, key) => {
+const combineCollection = (manifests, label, key) => {
+  const output = `output/${key}.json`;
   const iiif = {
     context: "http://iiif.io/api/presentation/3/context.json",
     label: { none: [label] },
-    id: id,
+    id: `https://raw.githubusercontent.com/mathewjordan/combine/main/${output}`,
     type: "Collection",
     items: manifests,
   };
 
   fs.writeFile(
-    `output/${key}.json`,
+    output,
     JSON.stringify(iiif),
     (error) => error && console.error(error)
   );
