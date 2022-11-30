@@ -39,7 +39,7 @@ const getManifests = ({ manifests, id, label, key }) => {
 const combineCollection = (manifests, label, key) => {
   const output = `output/${key}.json`;
   const iiif = {
-    context: "http://iiif.io/api/presentation/3/context.json",
+    "@context": "http://iiif.io/api/presentation/3/context.json",
     label: { none: [label] },
     id: `https://raw.githubusercontent.com/mathewjordan/combine/main/${output}`,
     type: "Collection",
