@@ -46,7 +46,7 @@ const combineCollection = (manifests, id, label, key) => {
   };
 
   fs.writeFile(
-    `output/${key}.js`,
+    `output/${key}.json`,
     JSON.stringify(iiif),
     (error) => error && console.error(error)
   );
