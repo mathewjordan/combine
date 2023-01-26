@@ -3,25 +3,25 @@ const fs = require("fs");
 
 const collections = [
   {
-    id: "https://dcapi.rdc.library.northwestern.edu/api/v2/collections/faf4f60e-78e0-4fbf-96ce-4ca8b4df597a?as=iiif",
+    id: "https://api.dc.library.northwestern.edu/api/v2/collections/faf4f60e-78e0-4fbf-96ce-4ca8b4df597a?as=iiif",
     label: "World War II Poster Collection",
     key: "ww2",
   },
-  // {
-  //   id: "https://dcapi.rdc.library.northwestern.edu/api/v2/collections/55ff2504-dd53-4943-b2cb-aeea46e77bc3?as=iiif",
-  //   label: "Edward S. Curtis's The North American Indian",
-  //   key: "curtis",
-  // },
-  // {
-  //   id: "https://dcapi.rdc.library.northwestern.edu/api/v2/collections/c2a8a3e0-af0f-4e04-8721-91698fc14574?as=iiif",
-  //   label: "Records of the Bursar’s Office Takeover, May 1968",
-  //   key: "bursars",
-  // },
-  // {
-  //   id: "https://dcapi.rdc.library.northwestern.edu/api/v2/collections/8cdf83c9-3831-4211-acd7-122bca9b89da?as=iiif",
-  //   label: "Athletic Department Football Films",
-  //   key: "football",
-  // },
+  {
+    id: "https://api.dc.library.northwestern.edu/api/v2/collections/55ff2504-dd53-4943-b2cb-aeea46e77bc3?as=iiif",
+    label: "Edward S. Curtis's The North American Indian",
+    key: "curtis",
+  },
+  {
+    id: "https://api.dc.library.northwestern.edu/api/v2/collections/c2a8a3e0-af0f-4e04-8721-91698fc14574?as=iiif",
+    label: "Records of the Bursar’s Office Takeover, May 1968",
+    key: "bursars",
+  },
+  {
+    id: "https://api.dc.library.northwestern.edu/api/v2/collections/8cdf83c9-3831-4211-acd7-122bca9b89da?as=iiif",
+    label: "Athletic Department Football Films",
+    key: "football",
+  },
 ];
 
 const getCollectionResponse = (url) => axios.get(url);
